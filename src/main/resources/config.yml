@@ -1,0 +1,20 @@
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  database: playlegend
+  user: root
+  password: ''
+message-keys:
+  player_sign_successfully_created: "[Permissions] Player Sign successfully created for %s"
+  player_sign_wrong_block_type: "[Permissions] You have to target a sign"
+  player_does_not_exist: "[Permissions] Player %s does not exist"
+  player_group_info: "[Permissions] Player %s has the group %s. Group expires: %s"
+  player_group_not_found: "[Permissions] Player %s's group could not be found"
+  player_group_successfully_updated: "[Permissions] Your group has been successfully updated to %s"
+  group_list_title: "[Permissions] Available Groups (%d):"
+  group_successfully_created: "[Permissions] Group %s has successfully been created"
+  group_successfully_removed: "[Permissions] Group %s has successfully been removed"
+  group_successfully_set: "[Permissions] Group %s successfully set to %s"
+  group_attribute_successfully_renamed: "[Permissions] Group %s's Attribute %s has been renamed to %s"
+  group_already_exists: "[Permissions] Group %s already exists"
+  group_does_not_exist: "[Permissions] Group %s does not exist"

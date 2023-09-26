@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>gg.use</groupId>
+  <artifactId>playlegend-dev-app-1</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <repositories>
+    <repository>
+      <id>papermc</id>
+      <url>https://repo.papermc.io/repository/maven-public/</url>
+    </repository>
+    <repository>
+      <id>aikar</id>
+      <url>https://repo.aikar.co/content/groups/aikar/</url>
+    </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.papermc.paper</groupId>
+      <artifactId>paper-api</artifactId>
+      <version>1.20.1-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.26</version>
+    </dependency>
+    <dependency>
+      <artifactId>acf-paper</artifactId>
+      <groupId>co.aikar</groupId>
+      <scope>compile</scope>
+      <version>0.5.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <artifactId>taskchain-bukkit</artifactId>
+      <groupId>co.aikar</groupId>
+      <scope>compile</scope>
+      <version>3.7.3-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>5.0.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations-java5</artifactId>
+      <version>24.0.1</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>5.10.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.22</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>clean install</defaultGoal>
+    <finalName>Permissions</finalName>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.1</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+        <configuration>
+          <createDependencyReducedPom>false</createDependencyReducedPom>
+          <shadedArtifactAttached>false</shadedArtifactAttached>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.1</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+</project>
