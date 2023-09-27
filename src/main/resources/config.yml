@@ -11,6 +11,7 @@ message-keys:
   player_group_info: "[Permissions] Player %s has the group %s. Group expires: %s"
   player_group_not_found: "[Permissions] Player %s's group could not be found"
   player_group_successfully_updated: "[Permissions] Your group has been successfully updated to %s"
+  default_group_can_not_be_removed: "[Permissions] You can not remove the default group"
   group_list_title: "[Permissions] Available Groups (%d):"
   group_successfully_created: "[Permissions] Group %s has successfully been created"
   group_successfully_removed: "[Permissions] Group %s has successfully been removed"

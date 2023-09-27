@@ -54,6 +54,10 @@ public class PermissionsCommand extends BaseCommand {
 
   @Subcommand("group remove")
   public void onGroupRemove(CommandSender sender, String name) {
+    if (name.equalsIgnoreCase("default")) {
+      sender.sendMessage(this.messageLoader.getMessage(MessageKeys.DEFAULT_GROUP_CAN_NOT_BE_REMOVED));
+      return;
+    }
     new BukkitTaskChain(this.plugin).newChain()
         .asyncFirst(() -> this.groupManager.getGroup(name))
         .asyncLast(group -> {
