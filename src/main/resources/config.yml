@@ -1,9 +1,9 @@
 mysql:
-  host: 127.0.0.1
-  port: 3306
-  database: playlegend
-  user: root
-  password: ''
+  host: host
+  port: port
+  database: database
+  user: username
+  password: password
 message-keys:
   player_sign_successfully_created: "[Permissions] Player Sign successfully created for %s"
   player_sign_wrong_block_type: "[Permissions] You have to target a sign"
